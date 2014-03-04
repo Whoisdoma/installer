@@ -13,8 +13,9 @@ class RouteServiceProvider extends ServiceProvider
 	 * @return void
 	 */
 	public function register()
-	{
+	{            
 		include __DIR__.'/../../../routes.php';
 	}
+        
 
 }

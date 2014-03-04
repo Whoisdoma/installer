@@ -8,6 +8,7 @@
 *
 */
 
-View::addNamespace('whoisdoma_installer', __DIR__.'/views/');
+View::addNamespace('whoisdoma_installer',__DIR__.'/views/');
 
 Route::any('install', 'Whoisdoma\Installer\Controller@run');
+
