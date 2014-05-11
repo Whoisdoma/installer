@@ -28,7 +28,7 @@ class Controller extends BaseController
 	
 	public function run()
 	{
-            $step = Input::query('step');
+            $step = Input::get('step');
             
             //define the valid steps
             $valid_steps = array('start', 'install_db', 'install_admin', 'run', 'success');
@@ -41,7 +41,7 @@ class Controller extends BaseController
             
             $this->step = $step;
             
-            $method = strtolower(Request::method());
+            $method = strtolower(Request::getMethod());
             $action = $method.'_'.$step;
             
             return $this->$action();
@@ -86,7 +86,7 @@ class Controller extends BaseController
             $this->remember('db_conf', $db_conf);
             
             //redirect to next step
-            $this->redirectTo('install_admin');
+            return $this->redirectTo('install_admin');
         }
         
         public function get_install_admin()
@@ -115,7 +115,7 @@ class Controller extends BaseController
             
             $this->remember('admin', $user_info);
             
-            $this->redirectTo('run');
+            return $this->redirectTo('run');
             
         }
         

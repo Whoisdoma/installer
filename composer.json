@@ -7,7 +7,6 @@
             "email": "info@xaos-ia.com"
         }
     ],
-	"version": "1.0.0",
     "require": {
         "php": ">=5.3.0",
         "illuminate/support": "4.1.*"
